@@ -36,5 +36,18 @@ public class SingleLinkedList<T>{
 
     
     //nested class
-    class Node<T>{}
+    class Node<T>{
+        //element contained in this node
+        private T content;
+
+        //constructor
+        public Node(T element){
+            content = element;
+        }
+
+        //element getter
+        public T GetElement(){
+            return content;
+        }
+    }
 }
