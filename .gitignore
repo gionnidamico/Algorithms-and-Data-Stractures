@@ -1,0 +1,5 @@
+#ignores class files generated from java files:#
+*.class
+
+#ignores test.java file used to help debugging:#
+Test.class
