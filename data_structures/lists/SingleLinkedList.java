@@ -35,19 +35,32 @@ public class SingleLinkedList<T>{
 
 
     
-    //nested class
+    //nested Node class
     class Node<T>{
         //element contained in this node
         private T content;
+        //next element in the list (pointer to)
+        private Node<T> nextNode;
 
-        //constructor
-        public Node(T element){
+        //constructor, takes in input the element to store in the node and the pointed next node
+        public Node(T element, Node<T> next){
             content = element;
+            nextNode = next;
         }
 
         //element getter
         public T GetElement(){
             return content;
+        }
+
+        //getter of next element in the list (pointed by this node)
+        public Node<T> getNext(){
+            return nextNode;
+        }
+
+        //setter of the next element in the list (pointed by this node)
+        public void setNext(Node<T> newPointer){
+            nextNode = newPointer;
         }
     }
 }
