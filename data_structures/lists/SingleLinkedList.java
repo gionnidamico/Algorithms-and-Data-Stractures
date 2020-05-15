@@ -1,4 +1,4 @@
-package data_structures.lists;
+package data_structures.lists; 
 
 //Single Linked List of generic nodes, with a nested class Node. 
 //T is the generic type the list will contain.
@@ -10,6 +10,7 @@ public class SingleLinkedList<T>{
       private Node<T> tail = null;
       //size counts how many elements the list contains
        private int size = 0;
+
 
       //constructors to build the list:one without arguments, one with the head and one with head and tail
       public SingleLinkedList();
@@ -30,6 +31,18 @@ public class SingleLinkedList<T>{
       public int Size(){
            return size;
       }
+
+      //getter of the head of the list
+      public Node<T> getHead(){
+          return head;
+      }
+
+      //getter of the tail of the list
+      public Node<T> getTail(){
+          return tail;
+      }
+
+
 
 
 
