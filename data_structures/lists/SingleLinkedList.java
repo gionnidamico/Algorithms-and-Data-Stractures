@@ -43,6 +43,51 @@ public class SingleLinkedList<T>{
       }
 
 
+      //add a specified node at the head of the list
+      public void addAtHead(T newHeadElement){
+            Node<T> temp = new Node<T>(newHeadElement, head);       //creates a new node to contain the element
+            head = temp;                                            //allocates the head
+
+            if (IsEmpty())                                          //if the list was empty, the new node is both the head and the tail
+                tail = head;
+            
+            size++;                                                 //updates the size attribute 
+            
+      }
+
+
+      //add a specified node at the tail of the list
+      public void addAtTail(T newTailElement){
+          Node<T> temp = new Node<T>(newTailElement, null);         //allocates the node to contain the new element
+
+          if (IsEmpty())                                            //if the list is empty,  the only node is the head too
+                head = temp;
+          else
+                tail.setNext(temp);                                 //if not, set the dependencies (ex-last element points to the new tail)
+
+          tail = temp;                                              //anyway, update the tail to be the new node
+                       
+          size++;                                                   //updates the size attribute
+      }
+
+
+    //removes the head node and returns it
+    public T removeHead(){
+        if (IsEmpty())                                              //if the list is empty there is nothing to remove
+            return null;
+        
+        Node<T> temp = head.GetElement();                           //stores the head element (will be retrieved at the end of the function)
+        head = head.getNext();                                      //updates the head of the list
+
+        size--;                                                     //updates the size attribute
+
+        if (IsEmpty())                                              //if the list is now empty(there was a single element in the list) remember to deallocate the tail pointer (aka delete tail reference)
+            tail = null;
+
+        return temp;                                                //as described, returns the ex head 
+        
+
+    }
 
 
 
