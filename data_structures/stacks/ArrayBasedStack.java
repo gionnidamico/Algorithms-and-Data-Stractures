@@ -12,6 +12,17 @@ public class ArrayBasedStack<T> implements TStack<T>{
 
     //constructor which simply creates space where inserting the elements
     public ArrayBasedStack(int capacity){
-        dataStored = T[] new Object[capacity];       //creates an array of generic Objects and then downcastes to be an array of T elements because T is a generic    
+        dataStored = T[] new Object[capacity];       //creates an array of generic Objects and then downcastes to be an array of T elements be--cause T is a generic    
     }  
+
+
+    //returns the number of elements stacked in the stack
+    public int size(){
+        return topIndex + 1;                                   //exploits the rule that arrays start at zero and deduces the stack size (note:it works even for empty ones: -1+1=0)
+    }
+
+    //returns whether the stack is empty
+    public boolean isEmpty(){
+        return topIndex = -1;                                   //by definition, if empty the stack has the 'topIndex' attribute equal to -1
+    }
 } 
