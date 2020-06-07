@@ -12,7 +12,7 @@ public class ArrayBasedStack<T> implements TStack<T>{
 
     //constructor which simply creates space where inserting the elements
     public ArrayBasedStack(int capacity){
-        dataStored = T[] new Object[capacity];       //creates an array of generic Objects and then downcastes to be an array of T elements be--cause T is a generic    
+        dataStored = (T[]) new Object[capacity];       //creates an array of generic Objects and then downcastes to be an array of T elements be--cause T is a generic    
     }  
 
 
@@ -44,10 +44,10 @@ public class ArrayBasedStack<T> implements TStack<T>{
     }
 
     //addes a new element to the top of the stack;generates an exception if the stack is full
-    public void push(newElement) throws IllegalStateException{
+    public void push(T newElement) throws IllegalStateException{
         if (size() == dataStored.lenght())               //if the size of the stack has already reached the maximum lenght the stack is full, therefore any new attempt to push a new element at the top generates an exception
             throw IllegalStateException;
         else 
-            dataStored[++topIndex] == newElement;         //pushes the newElement at the top (previous topIndex+1) and updates the size
+            dataStored[++topIndex] = newElement;         //pushes the newElement at the top (previous topIndex+1) and updates the size
     }
 } 
