@@ -32,6 +32,22 @@ public class ArrayBasedStack<T> implements TStack<T>{
         if (isEmpty())
             return null;                            //if the stack is empty, returns null because there are no elements
         else
-            return dataStored[t];
+            return dataStored[topIndex];
     }  
+
+    //removes the top element from the stack and returns it; generates an exception if there aren't elements in the stack
+    public T pop() throws IllegalStateException{
+        if (isEmpty())
+            throw IllegalStateException;                //throws an exception if empty
+        else
+            return dataStored[topIndex--];              //returns the element at the 'top Index' and updates the pointer of the array; note that the data is not destroyed but simply ignored and put 'outside' the stack bonds  
+    }
+
+    //addes a new element to the top of the stack;generates an exception if the stack is full
+    public void push(newElement) throws IllegalStateException{
+        if (size() == dataStored.lenght())               //if the size of the stack has already reached the maximum lenght the stack is full, therefore any new attempt to push a new element at the top generates an exception
+            throw IllegalStateException;
+        else 
+            dataStored[++topIndex] == newElement;         //pushes the newElement at the top (previous topIndex+1) and updates the size
+    }
 } 
