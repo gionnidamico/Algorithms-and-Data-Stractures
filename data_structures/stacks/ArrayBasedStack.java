@@ -26,5 +26,12 @@ public class ArrayBasedStack<T> implements TStack<T>{
         return topIndex = -1;                                   //by definition, if empty the stack has the 'topIndex' attribute equal to -1
     }
 
-    
+
+    //returns the top element of the stack without removing it
+    public T top(){
+        if (isEmpty())
+            return null;                            //if the stack is empty, returns null because there are no elements
+        else
+            return dataStored[t];
+    }  
 } 
