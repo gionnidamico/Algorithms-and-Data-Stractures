@@ -28,5 +28,14 @@ public class ArrayBasedQueue<T> implements TQueue<T>{
         }
 
         
-       
+        //returns the element at the front of the queue without removing it
+        public T first(){
+                if (isEmpty())
+                        return null;                            //if the queue is empty there are no elements to return
+                else 
+                        return content[frontIndex];
+        }
+
+        //removes the element at the front of the queue
+       // public void dequeue()
 }

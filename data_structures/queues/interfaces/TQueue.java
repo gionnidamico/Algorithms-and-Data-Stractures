@@ -10,7 +10,7 @@ public interface TQueue<T> {
         //returns the first element of the queue (equivalent to the element with bigger priority) without removing it
         public T first();
         //enqueue an element newElement to the rear of the queue, throws an exception if the queue is full
-        public T enque(T newElemenr) throws IllegalStateException;
+        public T enqueue(T newElemenr) throws IllegalStateException;
         //removes the first element of the queue 
-        public void deque() throws IllegalStateException;
+        public void dequeue() throws IllegalStateException;
 }
