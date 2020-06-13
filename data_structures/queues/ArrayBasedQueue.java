@@ -37,5 +37,15 @@ public class ArrayBasedQueue<T> implements TQueue<T>{
         }
 
         //removes the element at the front of the queue
-       // public void dequeue()
+        public void dequeue() throws IllegalStateException{
+                if (isEmpty()){
+                        throw new IllegalStateException();                              //if the queue is empty there is nothing to return
+                }
+                else{
+                        //T result = content[frontIndex];
+                        frontIndex = (nOfElements + 1) % content.lenght();              //modular arithmetic: given the array of lenght 'content.lenght', we start at 'nOfElements + 1' index (because we consider thge next element) and then with the modulo operator, if this quantity is bigger than the lenght of the array we simply restart at the zero index and select the first available slot as the new front index
+                        nOfElements--;                                                  //we have removed an element, so we update the number of them in the queue
+                }
+
+        }
 }
