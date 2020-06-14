@@ -48,4 +48,16 @@ public class ArrayBasedQueue<T> implements TQueue<T>{
                 }
 
         }
+
+        //add an element at the rear of the queue
+        public void enqueue(T newElement) throws IllegalStateException{
+                if (content.lenght() = nOfElements){
+                        throw new IllegalStateException();                                      //if the queue is full we cannot add another element, so an exception is throwm
+                }
+                else{
+                        int rearIndex = (nOfElements + frontIndex) % content.lenght();          //calculates the rear of the queue where the element will be added (in a similiar way we do in dequeue())
+                        content[rearIndex] = newElement;                                        //enqueues the new element
+                        nOfElements++;                                                          //updates the size of the queue
+                }
+        }
 }
