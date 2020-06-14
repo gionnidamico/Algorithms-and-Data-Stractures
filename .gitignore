@@ -2,4 +2,4 @@
 *.class
 
 #ignores test.java file used to help debugging:#
-Test.class
+Test.classgotgit
