@@ -1,5 +1,5 @@
-package data_structures.interfaces;
-import data_structures.interfaces.Position;
+package data_structures.lists.interfaces;
+import data_structures.lists.interfaces.Position;
 
 //standard interface for a Positional List (extends iterable interface)
 public interface PositionalList<T> extends Iterable<T>{
