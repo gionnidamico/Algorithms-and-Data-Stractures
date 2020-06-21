@@ -4,8 +4,58 @@ import data_structures.interfaces.*;
 //positional list implemented with the logic of a doublylinked list (from interface)
 public class LinkedPositionalList<T> implements PositionalList<T>{
 
+
+
     //inner class Node which usesthe Position interface as a base
     private class Node<T> implements Position<T>{
+
+                //stores the element of the T type
+                private T element;
+                //pointer to the next node
+                private Node<T> nextNode;
+                //pointer to the previous node
+                private Node<T> previousNode;
+
+
+                //constructor which just fills the parameters of the Node
+                public Node(T newElement, Node<T> next, Node<T> previous){
+                    element = newElement;
+                    nextNode = next;
+                    previousNode = previous;
+                }
+
+                //getter of the element contained in the node; conventionally, a 'null' element is a flag to an invalid position
+                public T getElement() throws IllegalStateException{
+                    if (element == null)                                //if the element is null and therefore the position invalid, throws an Exception 
+                        throw new IllegalStateException();
+                    else
+                        return element;                                 //else, simply returns the element
+                }
+
+                //setter of the element contained in the node
+                public void setElement(T newElement){
+                    element = newElement;
+                }
+
+                //getter of the node after this
+                public Node<T> getNext(){
+                    return nextNode;
+                }
+
+                //setter of the node after thus
+                public void setNext(Node<T> newNext){
+                    nextNode = newNext;
+                }
+
+                //getter of the node before this
+                public Node<T> getPrevious(){
+                    return previousNode;
+                }
+
+                //setter of the node before this
+                public void setPrevious(Node<T> newPrevious){
+                    previousNode = newPrevious;
+                }
 
     }
 
@@ -28,8 +78,8 @@ public class LinkedPositionalList<T> implements PositionalList<T>{
                 throw new NoSuchElementException();                     //if the list is ended there is no element after the current one
             }
             else{
-                currentNode = cursor;                                   //update the current node pointer
-                cursor = cursor.next() //to fix     
+                currentNode = cursor;                                   //updates the current node pointer
+                cursor = cursor.getNext();                              //updates the cursor to point at the next Position (Node)     
             }
 
             return currentNode;                                         //returns the current node pointed
